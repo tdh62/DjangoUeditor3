@@ -3,21 +3,21 @@ Ueditor HTML编辑器是百度开源的在线HTML编辑器,功能非常强大，
 
 更新历史
 ============
-###[2015-1-17]     Ver:1.9.143
+### [2015-1-17]     Ver:1.9.143
 
 * Fix:当models.py中toolbars变量使用unicode字符时，编辑器无法加载的问题
 
 
-###[2014-7-8]     Ver:1.8.143
+### [2014-7-8]     Ver:1.8.143
 
 * Fix:当admin使用inlines生成多实例时widget命名不正确的问题
 
-###[2014-6-27]     Ver:1.7.143
+### [2014-6-27]     Ver:1.7.143
 
 * Fix:解决在admin管理后台的使用问题。
 * 增加year,month,day的上传路径变量
 
-###[2014-6-25]
+### [2014-6-25]
 
 由于Ueditor从1.4版本开始，API发生了非常大的改动和不兼容，导致DjangoUeditor上一个版本的升级后上传功能不能用等，因此
 本次重新设计了API，后端上传的代码几乎完全重写了。
@@ -27,21 +27,21 @@ Ueditor HTML编辑器是百度开源的在线HTML编辑器,功能非常强大，
 * 新增了自定义Ueditor按钮的功能
 * 注意：本次升级与之前版本不兼容，但是在使用体验上差别不大。
 
-###[2014-6-16]
+### [2014-6-16]
 * 更新到Ueditor 1.4.3
 
-###[2014-5-15]
+### [2014-5-15]
 * 增加不过滤 script,style ,不自动转div为p的脚本
 * 修复在django 1.6和python2.7下的警告
 * 使用 json 代替 django 中的 simplejson
 * 用content_type 代替原来的 mime_type
 
-###[2014-5-7]
+### [2014-5-7]
 * 更新到Ueditor 1.3.6
 * BUGfix:更新UEditor文件夹名字，避免在linux出现找不到静态文件问题
 * 添加一种样式，besttome, 希望大家喜欢
 
-###[2013-2-22]
+### [2013-2-22]
 * 更新到Ueditor 1.2.5
 * BUGfix:更新UEditor文件夹名字，避免在linux出现找不到静态文件问题
 * BUGfix:现在支持south更新了
@@ -51,23 +51,23 @@ Ueditor HTML编辑器是百度开源的在线HTML编辑器,功能非常强大，
 
 使用方法
 ============
-##1、安装方法
+## 安装方法
 
 	* 方法一：将github整个源码包下载回家，在命令行运行：
 		python setup.py install
 	* 方法二：使用pip工具在命令行运行(推荐)：
 	    pip install DjangoUeditor
    		
-##2、在Django中安装DjangoUeditor
+## 在Django中安装DjangoUeditor
      在INSTALL_APPS里面增加DjangoUeditor app，如下：
 		INSTALLED_APPS = (
 			#........
     		'DjangoUeditor',
 		)
-##3、配置urls
+## 配置urls
 	url(r'^ueditor/',include('DjangoUeditor.urls' )),
 
-##4、在models中的使用
+## 在models中的使用
 
 	from DjangoUeditor.models import UEditorField
 	class Blog(models.Model):
@@ -184,7 +184,7 @@ UEditorField的参数如下：
         如果要侦听contentchange事件，就在myEventHander中增加一个on_contentchange方法，然后在该方法中返回js代码。
         
 
-##5、在表单中使用非常简单，与常规的form字段没什么差别，如下：
+## 在表单中使用非常简单，与常规的form字段没什么差别，如下：
 	class TestUeditorModelForm(forms.ModelForm):
     	class Meta:
         	model=Blog
@@ -219,7 +219,7 @@ UEditorField的参数如下：
         {{ form }} 
     </div>
 
-##6、Settings配置
+## Settings配置
       在Django的Settings可以配置以下参数：
             UEDITOR_SETTINGS={
                 "config":{
@@ -229,7 +229,7 @@ UEditorField的参数如下：
                    #这里放php/config.json里面的配置项.......
                 }
             }
-##7、在模板里面：
+## 在模板里面：
     <head>
         ......
         {{ form.media }}        #这一句会将所需要的CSS和JS加进来。
